@@ -28,6 +28,18 @@ const TestButtons: React.FC<TestButtonProps> = ({ fbq }) => {
       >
         Purchase
       </button>
+      <button
+              name="PurchaseMalform"
+              onClick={() => {
+                fbq("track", "Purchase", {
+                  order_id: "test_order_id_malform",
+                  value: false,
+                  currency: "USD",
+                });
+              }}
+            >
+              Purchase Malform
+            </button>
     </>
   );
 };
